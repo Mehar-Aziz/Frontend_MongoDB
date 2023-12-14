@@ -1,5 +1,17 @@
-extends layout
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Book Management
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    h1 Book Management System
+    form(id="bookForm", method="post", action="/display")
+      input(type="text", id="title", placeholder="Title", required)
+      input(type="text", id="author", placeholder="Author", required)
+      input(type="text", id="genre", placeholder="Genre", required)
+      button(type="submit") Add Book
+    button.submit(type="button",id="add",onclick="window.location.href='/read'") Show Books
 
-block content
-  h1= title
-  p Welcome to #{title}
+    script(src="./script.js")
